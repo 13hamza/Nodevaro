@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* Contact form with EmailJS */
+  /* Contact form with EmailJS — sends directly to support@nodevaro.com */
   var form = document.getElementById('contact-form');
   if (form) {
     var status = document.getElementById('form-status');
 
-    // Initialize EmailJS - REPLACE WITH YOUR PUBLIC KEY
+    // Initialize EmailJS — REPLACE WITH YOUR PUBLIC KEY
     (function() {
       emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
     })();
@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
-      // Send email using EmailJS - REPLACE WITH YOUR SERVICE & TEMPLATE IDs
+      // Send email using EmailJS — REPLACE WITH YOUR SERVICE & TEMPLATE IDs
+      // Emails go to support@nodevaro.com, which Cloudflare routes to ameerhamzaabbas4@gmail.com
       emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        to_email: 'support@nodevaro.com',
         from_name: name,
         from_email: email,
         service: service,

@@ -47,13 +47,12 @@
       <div class="form-panel">
         <div id="form-status" class="form-status" role="alert"></div>
 
-        <!--
-          This form posts to Formspree (a free-tier form backend that works
-          with static hosting — no server needed). Replace YOUR_FORM_ID
-          below with your own endpoint from https://formspree.io before
-          going live, or swap the action for any form backend you prefer.
+        <!-- 
+          This form now uses EmailJS with Cloudflare Email Routing.
+          When submitted, it sends an email to support@nodevaro.com
+          which Cloudflare routes to ameerhamzaabbas4@gmail.com
         -->
-        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form id="contact-form">
           <div class="field-row">
             <div class="field">
               <label for="name">Name</label>

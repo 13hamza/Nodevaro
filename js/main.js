@@ -25,16 +25,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* Contact form */
+  /* Contact form with EmailJS */
   var form = document.getElementById('contact-form');
   if (form) {
     var status = document.getElementById('form-status');
+
+    // Initialize EmailJS - REPLACE WITH YOUR PUBLIC KEY
+    (function() {
+      emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
+    })();
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       var name = form.querySelector('#name').value.trim();
       var email = form.querySelector('#email').value.trim();
+      var service = form.querySelector('#service').value;
       var comment = form.querySelector('#comment').value.trim();
       var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -51,21 +57,24 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
-      fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
+      // Send email using EmailJS - REPLACE WITH YOUR SERVICE & TEMPLATE IDs
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        from_name: name,
+        from_email: email,
+        service: service,
+        message: comment
       })
-        .then(function (response) {
-          if (response.ok) {
+        .then(function(response) {
+          if (response.status === 200) {
             showStatus('Thanks, ' + name.split(' ')[0] + ' — your message is in. We reply within one business day.', 'success');
             form.reset();
           } else {
-            showStatus('Something went wrong sending that. Please email us directly at ameerhamzaabbas4@gmail.com.', 'error');
+            showStatus('Something went wrong sending that. Please email us directly at support@nodevaro.com.', 'error');
           }
         })
-        .catch(function () {
-          showStatus('Something went wrong sending that. Please email us directly at ameerhamzaabbas4@gmail.com.', 'error');
+        .catch(function(error) {
+          console.error('EmailJS error:', error);
+          showStatus('Something went wrong sending that. Please email us directly at support@nodevaro.com.', 'error');
         })
         .finally(function () {
           submitBtn.disabled = false;

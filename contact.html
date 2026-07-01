@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Nodevaro</title>
+<meta name="description" content="Tell Nodevaro about your website, automation, or marketing needs. We reply within one business day.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo"><span class="dot"></span>Nodevaro</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-ghost">Get a quote</a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h1>Tell us what's slow, manual, or missing.</h1>
+      <p class="lede">Fill in the form and we'll reply within one business day usually with a couple of clarifying questions before we suggest anything.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container grid-2" style="align-items:start;">
+
+      <div class="form-panel">
+        <div id="form-status" class="form-status" role="alert"></div>
+
+        <!--
+          This form posts to Formspree (a free-tier form backend that works
+          with static hosting — no server needed). Replace YOUR_FORM_ID
+          below with your own endpoint from https://formspree.io before
+          going live, or swap the action for any form backend you prefer.
+        -->
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Jordan Miles" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jordan@company.com" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="service">What are you interested in? <span style="font-weight:400;">(optional)</span></label>
+            <select id="service" name="service">
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="Web development">Web development</option>
+              <option value="n8n automation / AI assistant">n8n automation / AI assistant</option>
+              <option value="Digital marketing">Digital marketing</option>
+              <option value="All three">All three</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="comment">Message</label>
+            <textarea id="comment" name="comment" placeholder="Tell us what's slow, manual, or missing right now…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Send message</button>
+          <p class="form-note">We reply within one business day and never share your details with anyone else.</p>
+        </form>
+      </div>
+
+      <div>
+        <h2>Other ways to reach us</h2>
+        <p>Prefer email or a call? Both go straight to the team — no ticketing system in between.</p>
+
+        <div class="card" style="margin-bottom:16px;">
+          <h5 style="font-family:var(--font-mono);text-transform:uppercase;font-size:.75rem;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:8px;">Email</h5>
+          <a href="mailto:ameerhamzaabbas4@gmail.com" style="font-family:var(--font-display);font-size:1.15rem;color:var(--teal-deep);">ameerhamzaabbas4@gmail.com</a>
+        </div>
+        <div class="card" style="margin-bottom:16px;">
+          <h5 style="font-family:var(--font-mono);text-transform:uppercase;font-size:.75rem;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:8px;">Phone</h5>
+          <a href="tel:+923010615993" style="font-family:var(--font-display);font-size:1.15rem;color:var(--teal-deep);">+92 301 0615993</a>
+        </div>
+        <div class="card">
+          <h5 style="font-family:var(--font-mono);text-transform:uppercase;font-size:.75rem;letter-spacing:.06em;color:var(--ink-faint);margin-bottom:8px;">Response time</h5>
+          <p style="margin:0;">Within one business day, Monday–Friday.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo"><span class="dot"></span>Nodevaro</a>
+        <p style="margin-top:14px;max-width:32ch;">A small studio for web development, n8n / AI automation, and digital marketing built to work as one system.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Site</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#web-development">Web development</a></li>
+          <li><a href="services.html#automation">Automation &amp; AI</a></li>
+          <li><a href="services.html#marketing">Digital marketing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:ameerhamzaabbas4@gmail.com">ameerhamzaabbas4@gmail.com</a></li>
+          <li><a href="tel:+923010615993">+92 301 0615993</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nodevaro. All rights reserved.</span>
+      <span>Built with Nodevaro.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
